@@ -1,0 +1,13 @@
+<h1> - WIKINIMOUS  - </h1>
+<p><%= link_to "Add a new article", new_article_path %></p>
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <strong><%= link_to article.content, article_path(article) %></strong>
+      <p>
+        <%= link_to "Edit article", edit_article_path(article) %>
+        <%= link_to "Remove article", article_path(article), method: :delete %>
+      </p>
+    </li>
+  <% end %>
+</ul>
